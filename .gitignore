@@ -1,0 +1,7 @@
+# Archivos y carpetas a ser ignorados por Git
+
+# Carpeta con inputs usados durante el desarrollo
+input/
+
+# carpeta con outputs usados durante el desarrollo
+output/
