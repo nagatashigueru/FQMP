@@ -132,42 +132,37 @@ case $Metodo in
     1)
         MetodoUnoSimple
         if [ "$escribe" = "y" ]
-        then
-            data=$(MetodoUnoSimple)
-        fi
-      ;;
+            then
+                data=$(MetodoUnoSimple)
+            fi ;;
     2)
         MetodoDos
         if [ "$escribe" = "y" ]
-        then
-            data=$(MetodoDos)
-        fi
-      ;;
+            then
+                data=$(MetodoDos)
+            fi ;;
     3)
         MetodoTres
         if [ "$escribe" = "y" ]
-        then
-            data=$(MetodoTres)
-        fi
-        ;;
+            then
+                data=$(MetodoTres)
+            fi ;;
     4)
         MetodoCuatro
         if [ "$escribe" = "y" ]
-        then
-            data=$(MetodoCuatro)
-        fi
-        ;;
+            then
+                data=$(MetodoCuatro)
+            fi ;;
     5)
         MetodoCincoSimple
         if [ "$escribe" = "y" ]
-        then
-            data=$(MetodoCincoSimple)
-        fi
-        ;;
+            then
+                data=$(MetodoCincoSimple)
+            fi ;;
 esac
 
 if [ "$escribe" = "y" ]
-then
-    echo "$data" > $Salida
-fi
+    then
+        echo "$data" > $Salida
+    fi
 
