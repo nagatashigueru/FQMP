@@ -67,7 +67,8 @@ s_rot=$(GetInformation "Rotational" $archivo 4 c)
 e_vib=$(GetInformation "Vibrational" $archivo 2 c)
 cv_vib=$(GetInformation "Vibrational" $archivo 3 c)
 s_vib=$(GetInformation "Vibrational" $archivo 4 c)
-metodo=$(grep "SCF Done" $archivo | tail -n1 | tr " \t" "\n" | tr -s "\n" | tr "\n" " " | cut -d " " -f4 | cut -d "(" -f2 | cut -d ")" -f1)
+#metodo=$(grep "SCF Done" $archivo | tail -n1 | tr " \t" "\n" | tr -s "\n" | tr "\n" " " | cut -d " " -f4 | cut -d "(" -f2 | cut -d ")" -f1)
+metodo=$(grep "SCF Done" $archivo | tail -n 1 | awk '{print $3}' | awk -F "(" '{print $2}' | awk -F ")" '{print $1}')
 informacion=$(grep -A 7 "Gaussian 09:  ES64L-G09RevE.01 30-Nov-2015" $archivo | tail -n1)
 # ------------------------
 
