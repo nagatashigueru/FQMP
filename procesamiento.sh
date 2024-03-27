@@ -128,44 +128,46 @@ $metodo , $temperatura , $presion , $energia , $zpe ,      $u ,       $entalpia_
 "
 }
 
-if [ "$Metodo" = "1" ]
+case $Metodo in
+    1)
+        MetodoUnoSimple
+        if [ "$escribe" = "y" ]
+        then
+            data=$(MetodoUnoSimple)
+        fi
+      ;;
+    2)
+        MetodoDos
+        if [ "$escribe" = "y" ]
+        then
+            data=$(MetodoDos)
+        fi
+      ;;
+    3)
+        MetodoTres
+        if [ "$escribe" = "y" ]
+        then
+            data=$(MetodoTres)
+        fi
+        ;;
+    4)
+        MetodoCuatro
+        if [ "$escribe" = "y" ]
+        then
+            data=$(MetodoCuatro)
+        fi
+        ;;
+    5)
+        MetodoCincoSimple
+        if [ "$escribe" = "y" ]
+        then
+            data=$(MetodoCincoSimple)
+        fi
+        ;;
+esac
+
+if [ "$escribe" = "y" ]
 then
-MetodoUnoSimple
-    if [ "$escribe" = "y" ]
-    then
-        data=$(MetodoUnoSimple)
-        echo "$data" > $Salida
-    fi
-elif [ "$Metodo" = "2" ]
-then
-MetodoDos
-    if [ "$escribe" = "y" ]
-    then
-        data=$(MetodoDos)
-        echo "$data" > $Salida
-    fi
-elif [ "$Metodo" = "3" ]
-then
-MetodoTres
-    if [ "$escribe" = "y" ]
-    then
-        data=$(MetodoTres)
-        echo "$data" > $Salida
-    fi
-elif [ "$Metodo" = "4" ]
-then
-MetodoCuatro
-    if [ "$escribe" = "y" ]
-    then
-        data=$(MetodoCuatro)
-        echo "$data" > $Salida
-    fi
-elif [ "$Metodo" = "5" ]
-then
-MetodoCincoSimple
-    if [ "$escribe" = "y" ]
-    then
-        data=$(MetodoCincoSimple)
-        echo "$data" > $Salida
-    fi
+    echo "$data" > $Salida
 fi
+
